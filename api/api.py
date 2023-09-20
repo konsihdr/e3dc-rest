@@ -6,12 +6,14 @@ from e3dc import E3DC
 from flask import Flask, request
 from flask_httpauth import HTTPBasicAuth
 from flask_restful import Api, Resource
+from flask_cors import CORS
 from json_serialize import to_serializable
 from webargs import fields, validate
 from webargs.flaskparser import abort, parser, use_args
 from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
+cors = CORS(app)
 api = Api(app)
 auth = HTTPBasicAuth()
 app.config["RESTFUL_JSON"] = {"sort_keys": True, "default": to_serializable}

@@ -3,3 +3,4 @@ Flask-HTTPAuth
 Flask-RESTful
 gunicorn
 webargs
+flask_cors
